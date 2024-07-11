@@ -3,26 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import grayShirt from "../Images/grayshirt.png";
-import whiteShirt from "../Images/whiteshirt.png";
-import yellowShirt from "../Images/yellowshirt.png";
-import blueShirt from "../Images/blueshirt.png";
-import redShirt from "../Images/redshirt.png";
-import purpleShirt from "../Images/purpleshirt.png";
-
 import arrowBack from "/src/app/components/icons/ArrowBack.png";
 import arrowForward from "/src/app/components/icons/ArrowForward.png";
 
-const images = [
-    { src: grayShirt, alt: 'gray shirt' },
-    { src: whiteShirt, alt: 'white shirt' },
-    { src: yellowShirt, alt: 'yellow shirt' },
-    { src: blueShirt, alt: 'blue shirt' },
-    { src: redShirt, alt: 'red shirt' },
-    { src: purpleShirt, alt: 'purple shirt' },
-  ];
   
-  const ShowShirtSlide = () => {
+  const ShowShirtSlide = ({ images, setColor }) => {
     const [index, setIndex] = useState(0);
   
     const nextSlide = () => {
@@ -38,7 +23,7 @@ const images = [
     };
 
     const handleClick = (e) => {
-        console.log(e.target.alt)
+      setColor(e.target.alt)
     }
   
     return (

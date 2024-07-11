@@ -30,7 +30,7 @@ const DescriptionBox = () => {
                   Description
                 </p>
               </li>
-              <li class="me-2" onClick={handleClickShowcase}>
+              <li className="me-2" onClick={handleClickShowcase}>
                 <p className="inline-block p-4 active border-b-4 border-[#EAECF0]  dark:hover:text-gray-300">
                   Showcase
                 </p>
@@ -138,7 +138,7 @@ const DescriptionBox = () => {
                 Description
               </p>
             </li>
-            <li class="me-2">
+            <li className="me-2">
               <p className="inline-block p-4 active border-b-4 border-[#EAECF0]  dark:hover:text-gray-300">
                 Showcase
               </p>

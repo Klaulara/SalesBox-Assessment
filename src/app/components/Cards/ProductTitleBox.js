@@ -3,9 +3,12 @@ import Heart from "/src/app/components/icons/Heart.png";
 import Bookmark from "/src/app/components/icons/Bookmark.png";
 import Share from "/src/app/components/icons/Share.png";
 
+import LineDivisor from "../Divisor/LineDivisor";
+
 const TitleBox = () => {
   return (
-    <main className="flex w-[582px] justify-between mt-10">
+    <>
+    <div className="flex w-[582px] justify-between mt-10 mb-6">
       <div>
         <p className="text-[28px] font-semibold text-black">Polo Shirt</p>
         <p className="text-[#B9BBBF] font-normal">Teixeira Design Studio</p>
@@ -24,7 +27,9 @@ const TitleBox = () => {
             <Image src={Share} alt="Heart"/>
         </div>
       </div>
-    </main>
+    </div>
+    <LineDivisor />
+    </>
   );
 };
 

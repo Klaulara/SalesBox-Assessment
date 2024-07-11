@@ -1,6 +1,9 @@
+import LineDivisor from "../Divisor/LineDivisor";
+
 const ColorBox = () => {
     return (
-        <div>
+        <>
+        <div className="my-8">
             <p className="text-[#B9BBBF] font-medium text-[16px]">Choose a Color</p>
             <div className="flex w-[444px] gap-3">
                 <div className="bg-black rounded-full w-[64px] h-[64px]"></div>
@@ -12,6 +15,8 @@ const ColorBox = () => {
             </div>
             
         </div>
+        <LineDivisor />
+        </>
     );
 }
 
