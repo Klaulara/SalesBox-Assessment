@@ -48,8 +48,6 @@ export default function Home() {
     setSelectedShirt({name: color, image: images.find(img => img.alt === color).src})
   }, [color]);
 
-  console.log(size)
-
   useEffect(() => {
     setPrice(prices.find(p => p.size === size).price)
   }, [size]);

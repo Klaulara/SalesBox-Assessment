@@ -9,7 +9,6 @@ const ShirtSizeBox = ({ setSize }) => {
   const [selectedSize, setSelectedSize] = useState('Small');
 
   const handleSizeChange = (e) => {
-    console.log(e.target.value);
     setSelectedSize(e.target.value);
     setSize(e.target.value);
   }
