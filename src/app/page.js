@@ -20,7 +20,7 @@ import redShirt from "../app/components/Images/redshirt.png";
 import purpleShirt from "../app/components/Images/purpleshirt.png";
 
 const images = [
-  { src: grayShirt, alt: 'gray shirt' },
+  { src: grayShirt, alt: 'black shirt' },
   { src: whiteShirt, alt: 'white shirt' },
   { src: yellowShirt, alt: 'yellow shirt' },
   { src: blueShirt, alt: 'blue shirt' },
@@ -38,11 +38,11 @@ const prices = [
 
 export default function Home() {
 
-  const [color, setColor] = useState("gray shirt");
+  const [color, setColor] = useState("black shirt");
   const [selectedShirt, setSelectedShirt] = useState({name: color, image: images[0].src});
   const [size, setSize] = useState("Small");
   const [price, setPrice] = useState(71.56);
-  const [buyColor, setBuyColor] = useState("gray shirt");
+  const [buyColor, setBuyColor] = useState("black shirt");
   
   useEffect(() => {
     setSelectedShirt({name: color, image: images.find(img => img.alt === color).src})
@@ -65,7 +65,7 @@ export default function Home() {
           <PriceBox price={price} />
           <ColorBox setBuyColor={setBuyColor} />
           <ShirtSizeBox setSize={setSize} />
-          <AddToCartBox />
+          <AddToCartBox buyColor={buyColor} price={price} size={size} />
         </div>
         
       </div>

@@ -1,17 +1,63 @@
-import LineDivisor from "../Divisor/LineDivisor";
+import { useState } from "react";
 
-const ColorBox = () => {
+import LineDivisor from "../Divisor/LineDivisor";
+import ColorButton from "../Buttons/ColorButton";
+
+const ColorBox = ({ setBuyColor }) => {
+
+    const [selectedValue, setSelectedValue] = useState("black shirt");
+
+    const handleColorChange = (value) => {
+        setSelectedValue(value);
+        setBuyColor(value);
+    };
+
+
     return (
         <>
         <div className="my-8">
             <p className="text-[#B9BBBF] font-medium text-[16px]">Choose a Color</p>
             <div className="flex w-[444px] gap-3">
-                <div className="bg-black rounded-full w-[64px] h-[64px]"></div>
-                <div className="bg-gradient-to-b from-white to-[#CDCDCD] rounded-full w-[64px] h-[64px]"></div>
-                <div className="bg-[#FFAC3C] rounded-full w-[64px] h-[64px]"></div>
-                <div className="bg-[#0078B5] rounded-full w-[64px] h-[64px]"></div>
-                <div className="bg-[#BB0043] rounded-full w-[64px] h-[64px]"></div>
-                <div className="bg-[#5D21B7] rounded-full w-[64px] h-[64px]"></div>
+                <ColorButton
+                    color="#000000"
+                    value="black shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}
+                />
+                <ColorButton
+                    gradient="bg-gradient-to-b from-white to-[#CDCDCD]"
+                    value="white shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}   
+                />
+
+                <ColorButton
+                    color="#FFAC3C"
+                    value="yellow shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}
+                />
+
+                <ColorButton
+                    color="#0078B5"
+                    value="blue shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}
+                />
+
+                <ColorButton
+                    color="#BB0043"
+                    value="red shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}
+                />
+
+                <ColorButton
+                    color="#5D21B7"
+                    value="purple shirt"
+                    selectedValue={selectedValue}
+                    onChange={handleColorChange}
+                />
             </div>
             
         </div>

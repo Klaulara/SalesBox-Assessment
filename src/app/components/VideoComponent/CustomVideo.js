@@ -19,7 +19,7 @@ const CustomVideo = () => {
 
   return (
     <div>
-        <video ref={videoRef} width="1030" height="406" preload="none" className='rounded-xl'>
+        <video autoPlay ref={videoRef} width="1030" height="406" preload="none" className='rounded-xl'>
             <source src="/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
