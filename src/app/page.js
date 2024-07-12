@@ -11,8 +11,9 @@ import ShirtSizeBox from "./components/Cards/ShirtSizeBox";
 import AddToCartBox from "./components/Cards/AddToCartBox";
 import ShowShirtSlide from "./components/Cards/ShowShirtSlide";
 import DescriptionBox from "./components/Cards/DescriptionBox";
+import CartModal from "./components/Cart/CartModal";
 
-import grayShirt from "../app/components/Images/grayshirt.png"
+import blackShirt from "../app/components/Images/blackshirt.png";
 import whiteShirt from "../app/components/Images/whiteshirt.png";
 import yellowShirt from "../app/components/Images/yellowshirt.png";
 import blueShirt from "../app/components/Images/blueshirt.png";
@@ -20,56 +21,75 @@ import redShirt from "../app/components/Images/redshirt.png";
 import purpleShirt from "../app/components/Images/purpleshirt.png";
 
 const images = [
-  { src: grayShirt, alt: 'black shirt' },
-  { src: whiteShirt, alt: 'white shirt' },
-  { src: yellowShirt, alt: 'yellow shirt' },
-  { src: blueShirt, alt: 'blue shirt' },
-  { src: redShirt, alt: 'red shirt' },
-  { src: purpleShirt, alt: 'purple shirt' },
+  { src: blackShirt, alt: "black shirt", name: "Black Polo Shirt" },
+  { src: whiteShirt, alt: "white shirt", name: "White Polo Shirt"},
+  { src: yellowShirt, alt: "yellow shirt", name: "Yellow Polo Shirt"},
+  { src: blueShirt, alt: "blue shirt", name: "Blue Polo Shirt"},
+  { src: redShirt, alt: "red shirt", name: "Red Polo Shirt"},
+  { src: purpleShirt, alt: "purple shirt", name: "Purple Polo Shirt"},
 ];
 
 const prices = [
-  {size: 'Small', price: 71.56},
-  {size: 'Medium', price: 75.00},
-  {size: 'Large', price: 80.25},
-  {size: 'Extra large', price: 85.50},
-  {size: 'XXL', price: 89.95},
-]
+  { size: "Small", price: 71.56 },
+  { size: "Medium", price: 75.0 },
+  { size: "Large", price: 80.25 },
+  { size: "Extra large", price: 85.5 },
+  { size: "XXL", price: 89.95 },
+];
 
 export default function Home() {
-
   const [color, setColor] = useState("black shirt");
-  const [selectedShirt, setSelectedShirt] = useState({name: color, image: images[0].src});
+  const [selectedShirt, setSelectedShirt] = useState({
+    name: color,
+    image: images[0].src,
+  });
   const [size, setSize] = useState("Small");
   const [price, setPrice] = useState(71.56);
   const [buyColor, setBuyColor] = useState("black shirt");
-  
+  const [buyName, setBuyName] = useState("Black Polo Shirt");
+  const [buyImage, setBuyImage] = useState(blackShirt);
+
+  const [cart, setCart] = useState([]);
+
+  const [modal, setModal] = useState(false);
+
   useEffect(() => {
-    setSelectedShirt({name: color, image: images.find(img => img.alt === color).src})
+    setSelectedShirt({
+      name: color,
+      image: images.find((img) => img.alt === color).src,
+    });
   }, [color]);
 
   useEffect(() => {
-    setPrice(prices.find(p => p.size === size).price)
+    setPrice(prices.find((p) => p.size === size).price);
   }, [size]);
 
+  useEffect(() => {
+    setBuyName(images.find((img) => img.alt === buyColor).name);
+    setBuyImage(images.find((img) => img.alt === buyColor).src);
+  }, [buyColor]);
+
   return (
-    <div>
-      <Header />
-      <div className="flex w-fit gap-24">
-        <div>
-          <PrevShirt shirt={selectedShirt}/>
-          <ShowShirtSlide images={images} setColor={setColor}/>
+    <main className="w-fit">
+      <div>
+        <Header setModal={setModal} />
+        <div className="w-full md:flex md:gap-4">
+          <div className="w-full">
+            <PrevShirt shirt={selectedShirt} />
+            <ShowShirtSlide images={images} setColor={setColor} />
+          </div>
+          <div className="w-full">
+            <TitleBox />
+            <PriceBox price={price} />
+            <ColorBox setBuyColor={setBuyColor} />
+            <ShirtSizeBox setSize={setSize} />
+            <AddToCartBox buyName={buyName} buyImage={buyImage} price={price} size={size} setModal={setModal} setCart={setCart} buyColor={buyColor} />
+          </div>
         </div>
-        <div>
-          <TitleBox />
-          <PriceBox price={price} />
-          <ColorBox setBuyColor={setBuyColor} />
-          <ShirtSizeBox setSize={setSize} />
-          <AddToCartBox buyColor={buyColor} price={price} size={size} />
-        </div>
-        
+        <DescriptionBox />
+        {modal && <CartModal setModal={setModal} cart={cart} />}
       </div>
-      <DescriptionBox />
-    </div>
+      
+    </main>
   );
 }
