@@ -27,9 +27,8 @@ import arrowForward from "/src/app/components/icons/ArrowForward.png";
     }
   
     return (
-      <div className="flex w-[587px] ms-20">
+      <div className="flex items-center justify-center w-[587px] ms-20 mt-10">
         <button
-          className="left-0 top-1/2 transform -translate-y-1/2"
           onClick={prevSlide}
         >
           <Image src={arrowBack} alt="back" />
@@ -46,7 +45,6 @@ import arrowForward from "/src/app/components/icons/ArrowForward.png";
           </div>
         </div>
         <button
-          className="right-0 top-1/2 transform -translate-y-1/2"
           onClick={nextSlide}
         >
           <Image src={arrowForward} alt="forward" />

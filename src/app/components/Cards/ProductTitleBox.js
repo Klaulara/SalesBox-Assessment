@@ -8,7 +8,7 @@ import LineDivisor from "../Divisor/LineDivisor";
 const TitleBox = () => {
   return (
     <>
-    <div className="flex w-[582px] justify-between mt-10 mb-6">
+    <div className="flex w-fit px-60 md:px-0 md:w-[582px] justify-between mt-10 mb-6">
       <div>
         <p className="text-[28px] font-semibold text-black">Polo Shirt</p>
         <p className="text-[#B9BBBF] font-normal">Teixeira Design Studio</p>
