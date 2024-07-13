@@ -15,8 +15,8 @@ const ShirtSizeBox = ({ setSize }) => {
 
   return (
     <>
-    <div className="my-8">
-      <p className="text-[#B9BBBF] font-medium text-[16px]">Choose a Size</p>
+    <div className="w-full px-60 md:px-0 my-8">
+      <p className="text-[#B9BBBF] font-medium text-[16px] mb-3">Choose a Size</p>
       <div className="flex">
         <div className="flex h-7 items-center ps-2 bg-[#B9BBBF] rounded me-2">
           <label className="w-full py-2 mx-2 text-sm font-medium text-[#726C6C]" >

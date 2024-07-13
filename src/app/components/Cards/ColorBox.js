@@ -15,8 +15,8 @@ const ColorBox = ({ setBuyColor }) => {
 
     return (
         <>
-        <div className="my-8">
-            <p className="text-[#B9BBBF] font-medium text-[16px]">Choose a Color</p>
+        <div className="w-full px-60 md:px-0 my-8">
+            <p className="text-[#B9BBBF] font-medium text-[16px] mb-3">Choose a Color</p>
             <div className="flex w-[444px] gap-3">
                 <ColorButton
                     color="#000000"

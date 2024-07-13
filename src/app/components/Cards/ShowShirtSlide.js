@@ -27,20 +27,20 @@ import arrowForward from "/src/app/components/icons/ArrowForward.png";
     }
   
     return (
-      <div className="flex items-center justify-center w-[587px] ms-20 mt-10">
+      <div className="flex items-center justify-center w-full px-60 md:px-0 md:w-[587px] ms-20 mt-10">
         <button
           onClick={prevSlide}
         >
           <Image src={arrowBack} alt="back" />
         </button>
-        <div className="flex w-[520px] h-[115px] overflow-hidden">
+        <div className="flex w-full md:w-[520px] h-[115px] overflow-hidden">
           <div
             className="flex transition-transform duration-300"
             style={{ transform: `translateX(-${index * 115}px)` }}
             onClick={handleClick}
           >
             {images.map((img, idx) => (
-              <Image key={idx} src={img.src} alt={img.alt} className="w-[115px] h-[115px]" />
+              <Image key={idx} src={img.src} alt={img.alt} className="w-[520px] h-[115px]" />
             ))}
           </div>
         </div>

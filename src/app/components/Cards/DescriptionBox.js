@@ -20,18 +20,18 @@ const DescriptionBox = () => {
   };
 
   return (
-    <div className="w-[1279px] ms-20">
+    <div className="w-[1279px] ms-20 mt-10">
       {description ? (
         <>
           <div className="text-sm font-medium text-center text-gray-500 border-b-4 border-[#EAECF0]">
             <ul className="flex flex-wrap -mb-1">
               <li className="me-2">
-                <p className="inline-block p-4 active border-b-4 border-[#EAECF0] text-[#164C96]  dark:hover:text-gray-300">
+                <p className="inline-block p-4 active border-b-4 border-[#164C96] text-[#164C96]">
                   Description
                 </p>
               </li>
               <li className="me-2" onClick={handleClickShowcase}>
-                <p className="inline-block p-4 active border-b-4 border-[#EAECF0]  dark:hover:text-gray-300">
+                <p className="inline-block p-4 border-b-4 border-[#EAECF0]  dark:hover:text-gray-300">
                   Showcase
                 </p>
               </li>
@@ -39,10 +39,10 @@ const DescriptionBox = () => {
           </div>
           <div className="w-[1088px] h-[544px]">
             <div>
-              <p className="font-bold text-[24px] text-[#344054]">
+              <p className="font-bold text-[24px] text-[#344054] mt-10">
                 Product Description
               </p>
-              <p className="font-normal text-[16px] text-[#667085]">
+              <p className="font-normal text-[16px] text-[#667085] mt-6">
                 When it&apos;s colder than the far side of the moon and spitting
                 rain too, you&apos;ve still got to look good. From
                 water-repellent leather to a rugged outsole, the Lunar Force 1
@@ -53,9 +53,9 @@ const DescriptionBox = () => {
               </p>
             </div>
             <div>
-              <p className="font-bold text-[24px] text-[#344054]">Benefits</p>
+              <p className="font-bold text-[24px] text-[#344054] mt-10">Benefits</p>
               <ul>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -64,7 +64,7 @@ const DescriptionBox = () => {
                     look fresh.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -73,7 +73,7 @@ const DescriptionBox = () => {
                     feet dry.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -81,7 +81,7 @@ const DescriptionBox = () => {
                     Toe piece with star pattern adds durability.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -89,7 +89,7 @@ const DescriptionBox = () => {
                     Synthetic insulation helps keep you warm.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -98,7 +98,7 @@ const DescriptionBox = () => {
                     delivers lightweight cushioning.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -107,7 +107,7 @@ const DescriptionBox = () => {
                     moisture and cold.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -116,7 +116,7 @@ const DescriptionBox = () => {
                     grip.
                   </p>
                 </li>
-                <li className="flex">
+                <li className="flex mt-4">
                   <div className="w-[20px] h-[20px] bg-[#E7F4FC] rounded-full p-1">
                     <Image src={check} alt="check" />
                   </div>
@@ -139,7 +139,7 @@ const DescriptionBox = () => {
               </p>
             </li>
             <li className="me-2">
-              <p className="inline-block p-4 active border-b-4 border-[#EAECF0]  dark:hover:text-gray-300">
+              <p className="inline-block p-4 active border-b-4 border-[#164C96] text-[#164C96]">
                 Showcase
               </p>
             </li>
