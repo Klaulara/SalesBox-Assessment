@@ -49,7 +49,14 @@ export default function Home() {
   const [buyName, setBuyName] = useState("Black Polo Shirt");
   const [buyImage, setBuyImage] = useState(blackShirt);
 
-  const [cart, setCart] = useState([]);
+  //find cart from local storage
+  const [cart, setCart] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem('cart');
+      return savedCart ? JSON.parse(savedCart) : [];
+    }
+    return [];
+  });
 
   const [modal, setModal] = useState(false);
 
@@ -69,6 +76,17 @@ export default function Home() {
     setBuyImage(images.find((img) => img.alt === buyColor).src);
   }, [buyColor]);
 
+  useEffect(() => {
+      localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  useEffect(() => {
+    const cart = localStorage.getItem("cart");
+    if (cart) {
+      setCart(JSON.parse(cart));
+    }
+  }, []);
+
   return (
     <main className="w-fit">
       <div>
@@ -87,7 +105,7 @@ export default function Home() {
           </div>
         </div>
         <DescriptionBox />
-        {modal && <CartModal setModal={setModal} cart={cart} />}
+        {modal && <CartModal setModal={setModal} cart={cart} setCart={setCart} />}
       </div>
       
     </main>
